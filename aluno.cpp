@@ -1,6 +1,10 @@
 #include "aluno.hpp"
+#include <iostream>
+
+using namespace std;
 
 Aluno::Aluno() {
+   cout << "Construtor padrão da classe Aluno" << endl;
    nome = "";
    matricula = 0;
    cpf = 0;
@@ -32,5 +36,5 @@ float Aluno::getIra() {
    return ira;
 }
 
-void Aluno::calculaIra();
+void Aluno::calculaIra(){};
 

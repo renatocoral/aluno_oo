@@ -3,6 +3,8 @@
 
 #include <string>
 
+using namespace std;
+
 class Aluno {
 private:
    // Atributos
@@ -15,13 +17,13 @@ public:
    // Métodos
    Aluno(); // Método Construtor
    string getNome(); // Método Assessor
-   setNome(string nome);
+   void setNome(string nome);
    int getMatricula();
    int getCpf();
-   setCpf(int cpf);
+   void setCpf(int cpf);
    float getIra();
 
-   calculaIra();
+   void calculaIra();
 };
 
 #endif
