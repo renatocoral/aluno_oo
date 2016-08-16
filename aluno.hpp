@@ -16,7 +16,12 @@ public:
    Aluno(); // Método Construtor
    string getNome(); // Método Assessor
    setNome(string nome);
+   int getMatricula();
+   int getCpf();
+   setCpf(int cpf);
+   float getIra();
 
+   calculaIra();
 };
 
 #endif
