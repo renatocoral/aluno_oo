@@ -1,18 +1,17 @@
 
-
 # Exemplo de Classe em C++ (Disciplina de Orientação a Objetos)
 
 Para compilar, limpar e executar o projeto utilize ose seuintes comando no diretório raiz do projeto:
 
 Compilar:
 ```
-make
+$ make
 ```
 Limpar:
 ```
-make clean
+$ make clean
 ```
 Executar:
 ```
-make run
+$ make run
 ```
