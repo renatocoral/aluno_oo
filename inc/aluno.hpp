@@ -2,25 +2,19 @@
 #define ALUNO_HPP
 
 #include <string>
+#include "pessoa.hpp"
 
 using namespace std;
 
-class Aluno {
+class Aluno : public Pessoa {
 private:
    // Atributos
-   string nome;
-   int matricula;
    string curso;
-   int cpf;
    float ira;
 public:
    // Métodos
    Aluno(); // Método Construtor
-   string getNome(); // Método Assessor
-   void setNome(string nome);
-   int getMatricula();
-   int getCpf();
-   void setCpf(int cpf);
+   ~Aluno();
    float getIra();
 
    void calculaIra();

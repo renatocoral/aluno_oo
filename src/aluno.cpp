@@ -5,31 +5,15 @@ using namespace std;
 
 Aluno::Aluno() {
    cout << "Construtor padrão da classe Aluno" << endl;
-   nome = "";
-   matricula = 0;
-   cpf = 0;
+   setNome("");
+   setMatricula(0);
+   setCpf(0);
    curso = "Eng. de Software";
    ira = 5.0;
 }
 
-string Aluno::getNome() {
-   return nome;
-}
-
-void Aluno::setNome(string nome) {
-   this->nome = nome;
-}
-
-int Aluno::getMatricula() {
-   return matricula;
-}
-
-int Aluno::getCpf() {
-   return cpf;
-}
-
-void Aluno::setCpf(int cpf) {
-   this->cpf = cpf;
+Aluno::~Aluno(){ 
+   cout << "Destrutor da Classe Aluno" << endl;
 }
 
 float Aluno::getIra() {

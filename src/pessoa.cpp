@@ -1,3 +1,4 @@
+#include <iostream>
 #include "pessoa.hpp"
 
 Pessoa::Pessoa() {
@@ -7,6 +8,10 @@ Pessoa::Pessoa() {
    telefone = "(00) 0000-0000";
    endereco = "";
 }
+
+Pessoa::~Pessoa(){
+   cout << "Destrutor da Classe Pessoa" << endl;
+} 
 
 int Pessoa::getMatricula() {
    return matricula;
