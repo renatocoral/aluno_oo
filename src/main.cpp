@@ -1,8 +1,8 @@
 #include <iostream>
 #include <list>
 #include "aluno.hpp"
-//#include "professor.hpp"
-//#include "servidor.hpp"
+#include "professor.hpp"
+#include "servidor.hpp"
 
 using namespace std;
 
