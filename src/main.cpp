@@ -1,10 +1,37 @@
 #include <iostream>
+#include <list>
 #include "aluno.hpp"
+//#include "professor.hpp"
+//#include "servidor.hpp"
 
 using namespace std;
 
 int main(int argc, char ** argv) {
 
+list<Pessoa*> cadastro_de_pessoas;
+
+for(int i=0; i < 3; i++) {
+   string nome;
+   long int cpf;
+   cout << "Dados da Pessoa " << i+1 << ":" << endl;
+   cout << "Nome: ";
+   cin >>  nome;
+   cout << "CPF: ";
+   cin >> cpf;
+   Aluno *aluno = new Aluno();
+   aluno->setNome(nome);
+   aluno->setCpf(cpf);
+   cadastro_de_pessoas.push_back(aluno);
+
+}
+
+cout << "Tamanho da Lista: " << cadastro_de_pessoas.size() << endl;
+
+for (Pessoa *p : cadastro_de_pessoas) {
+   cout << "Nome: " << p->getNome() << endl;   
+}
+
+/*
    Aluno aluno_1;
    Aluno aluno_2;
    Aluno * aluno_3;
@@ -35,6 +62,6 @@ int main(int argc, char ** argv) {
 
    delete(aluno_3);
    delete(aluno_4);
-
+*/
    return 0;
 }
