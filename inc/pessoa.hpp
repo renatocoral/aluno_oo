@@ -26,6 +26,8 @@ public:
    void setTelefone(string telefone);
    string getEndereco();
    void setEndereco(string endereco);
+
+   virtual void imprimeDados();
    
 
 };

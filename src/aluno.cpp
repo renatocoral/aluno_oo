@@ -12,6 +12,15 @@ Aluno::Aluno() {
    ira = 5.0;
 }
 
+Aluno::Aluno(string nome, int matricula, long int cpf) {
+   cout << "Construtor Especifico da classe Aluno" << endl;
+   setNome(nome);
+   setMatricula(matricula);
+   setCpf(cpf);
+   curso = "Eng. de Software";
+   ira = 5.0;
+}
+
 Aluno::~Aluno(){ 
    cout << "Destrutor da Classe Aluno" << endl;
 }

@@ -15,6 +15,7 @@ private:
 public:
    // Métodos
    Servidor(); // Método Construtor
+   Servidor(string nome, int matricula, long int cpf, string cargo, string departamento, int carga_horaria);
    ~Servidor();
    string getCargo();
    void setCargo(string cargo);
@@ -22,6 +23,8 @@ public:
    void setDepartamento(string departamento);
    int getCargaHoraria();
    void setCargaHoraria(int carga_horaria);
+
+   void imprimeDados();
 };
 
 #endif

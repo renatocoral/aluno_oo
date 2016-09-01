@@ -44,3 +44,7 @@ void Pessoa::setEndereco(string endereco){
    this->endereco = endereco;
 } 
 
+void Pessoa::imprimeDados() {
+   cout << getNome() << "\t" << getMatricula() << "\t" << getCpf() << endl; 
+}
+

@@ -14,6 +14,7 @@ private:
 public:
    // Métodos
    Aluno(); // Método Construtor
+   Aluno(string nome, int matricula, long int cpf);
    ~Aluno();
    float getIra();
 

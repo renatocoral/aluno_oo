@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <list>
 #include "aluno.hpp"
 #include "professor.hpp"
@@ -6,32 +7,118 @@
 
 using namespace std;
 
+long int le_teclado_int() {
+   
+   string input = "";
+   long int valor;
+   while (true) {   
+      getline(cin, input);   
+      stringstream myStream(input);
+      if (myStream >> valor)
+        break;
+      cout << "Inteiro inválido, entre novamente!" << endl;
+    }
+    return valor;
+}
+float le_teclado_float() {
+   
+   string input = "";
+   float valor;
+   while (true) {   
+      getline(cin, input);   
+      stringstream myStream(input);
+      if (myStream >> valor)
+        break;
+      cout << "Float inválido, entre novamente!" << endl;
+    }
+    return valor;
+}
+
 int main(int argc, char ** argv) {
+/*
+   // Polimosrfismo - Exemplo de Uso de Sobrecarga no Contrutor
+   Aluno aluno_1;
+   Aluno aluno_2("Joao", 1500432, 234556544543);
+
+   Aluno *aluno_3 = new Aluno();
+   Aluno *aluno_4 = new Aluno("Carlos", 12313, 1231231231);
+
+   cout << "Nome do aluno: " << aluno_1.getNome() << endl;
+   cout << "Matricula: " << aluno_1.getMatricula() << endl;
+   cout << "CPF: " << aluno_1.getCpf() << endl;
+   cout << "Ira " << aluno_1.getIra() << endl; 
+   
+   cout << "Nome do aluno: " << aluno_2.getNome() << endl;
+   cout << "Matricula: " << aluno_2.getMatricula() << endl;
+   cout << "CPF: " << aluno_2.getCpf() << endl;   
+   cout << "Ira " << aluno_2.getIra() << endl;
+*/
 
 list<Pessoa*> cadastro_de_pessoas;
 
-for(int i=0; i < 3; i++) {
-   string nome;
-   long int cpf;
-   cout << "Dados da Pessoa " << i+1 << ":" << endl;
-   cout << "Nome: ";
-   cin >>  nome;
-   cout << "CPF: ";
-   cin >> cpf;
-   Aluno *aluno = new Aluno();
-   aluno->setNome(nome);
-   aluno->setCpf(cpf);
-   cadastro_de_pessoas.push_back(aluno);
+string entrada = "";
+int opcao = 1;
+while(opcao) {
+   cout << "Escolha uma opção:" << endl;
+   cout << "-----------------------" << endl;
+   cout << "1 - Cadastrar Aluno:" << endl;
+   cout << "2 - Cadastrar Professor:" << endl;
+   cout << "3 - Cadastrar Servidor:" << endl;
+   cout << "0 - Sair" << endl;
+   opcao = (int) le_teclado_int();
 
+   string nome = "";
+   int matricula;
+   long int cpf;
+   if ((opcao > 0) && (opcao <=3)) {
+         cout << "Nome: ";
+         getline (cin,nome);
+         cout << "Matricula: ";
+         matricula = (int) le_teclado_int();
+         cout << "CPF: ";
+         cpf = le_teclado_int();
+   }
+   if(opcao == 1) {
+         Aluno *aluno = new Aluno(nome, matricula, cpf);
+         cadastro_de_pessoas.push_back(aluno);      
+   }
+   else if(opcao == 2) {
+         string formacao = "";
+         string departamento = "";
+         float indice_de_aprovacao;
+         cout << "Formação: ";
+         getline (cin,formacao);
+         cout << "Departamento: ";
+         getline (cin,departamento);
+         cout << "Índice de Aprovação: ";
+         indice_de_aprovacao = le_teclado_float();
+         Professor *professor = new Professor(nome, matricula, cpf, formacao, departamento, indice_de_aprovacao);
+         cadastro_de_pessoas.push_back(professor);      
+   }
+   else if(opcao == 3) {
+      string cargo = "";
+      string departamento = "";
+      int carga_horaria;    
+      cout << "Cargo: ";
+      getline (cin,cargo);
+      cout << "Departamento: ";
+      getline (cin,departamento);
+      cout << "Carga Horária: ";
+      carga_horaria = (int) le_teclado_int();
+      Servidor *servidor = new Servidor(nome, matricula, cpf, cargo, departamento, carga_horaria);
+      cadastro_de_pessoas.push_back(servidor);      
+   }
 }
 
 cout << "Tamanho da Lista: " << cadastro_de_pessoas.size() << endl;
 
+cout << "Nome: \t Matricula \t CPF" << endl;
 for (Pessoa *p : cadastro_de_pessoas) {
-   cout << "Nome: " << p->getNome() << endl;   
+	p->imprimeDados();
 }
 
 /*
+   // Exemplo de Instanciação de Objetos (Estáticos e Dinâmicos)
    Aluno aluno_1;
    Aluno aluno_2;
    Aluno * aluno_3;

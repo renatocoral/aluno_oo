@@ -13,6 +13,17 @@ Servidor::Servidor() {
    cargo = "";
 }
 
+Servidor::Servidor(string nome, int matricula, long int cpf, string cargo, string departamento, int carga_horaria){
+   cout << "Construtor Especifico da classe Servidor" << endl;
+   setNome(nome);
+   setMatricula(matricula);
+   setCpf(cpf);
+   this->cargo = cargo;
+   this->departamento = departamento;
+   this->carga_horaria = carga_horaria;
+}
+
+
 Servidor::~Servidor(){ 
    cout << "Destrutor da Classe Professor" << endl;
 }
@@ -34,4 +45,8 @@ void Servidor::setCargaHoraria(int carga_horaria){
 }
 int Servidor::getCargaHoraria(){
 	return carga_horaria;
+}
+
+void Servidor::imprimeDados(){
+    cout << getNome() << "\t" << getMatricula() << "\t" << getCpf() << "\t" << getCargo() << "\t" << getDepartamento() << "\t" << getCargaHoraria() << endl;
 }

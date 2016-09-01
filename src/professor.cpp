@@ -14,6 +14,16 @@ Professor::Professor() {
 
 }
 
+Professor::Professor(string nome, int matricula, long int cpf, string formacao, string departamento, float indice_de_aprovacao){
+   cout << "Construtor Especifico da classe Professor" << endl;
+   setNome(nome);
+   setMatricula(matricula);
+   setCpf(cpf);
+   this->formacao = formacao;
+   this->departamento = departamento;
+   this->indice_de_aprovacao = indice_de_aprovacao;
+}
+
 Professor::~Professor(){ 
    cout << "Destrutor da Classe Professor" << endl;
 }
@@ -35,4 +45,8 @@ void Professor::setIndiceDeAprovacao(float indice){
 }
 float Professor::getIndiceDeAprovacao(){
 	return indice_de_aprovacao;
+}
+
+void Professor::imprimeDados(){
+    cout << getNome() << "\t" << getMatricula() << "\t" << getCpf() << "\t" << getFormacao() << "\t" << getDepartamento() << "\t" << getIndiceDeAprovacao() << endl;
 }
