@@ -57,6 +57,14 @@ if(argc > 1) {
    cout << "CPF: " << aluno_2.getCpf() << endl;   
    cout << "Ira " << aluno_2.getIra() << endl;
 
+   cout << "Nome do aluno: " << aluno_3->getNome() << endl;
+   cout << "CPF: " << aluno_3->getCpf() << endl;
+   cout << "Ira: " << aluno_3->getIra() << endl;
+
+   cout << "Nome do aluno: " << aluno_4->getNome() << endl;
+   cout << "CPF: " << aluno_4->getCpf() << endl;
+   cout << "Ira: " << aluno_4->getIra() << endl;
+
 }
 else {
    list<Pessoa*> cadastro_de_pessoas;
