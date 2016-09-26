@@ -1,4 +1,5 @@
 language: cpp
-script: 
-	make
-	make test
+compiler:
+  - gcc
+
+script: make
