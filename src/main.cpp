@@ -127,9 +127,9 @@ else {
    cout << "Tamanho da Lista: " << cadastro_de_pessoas.size() << endl;
 
    cout << "Nome: \t Matricula \t CPF" << endl;
-   for (Pessoa *p : cadastro_de_pessoas) {
-   	p->imprimeDados();
-   }
+   // for (Pessoa *p : cadastro_de_pessoas) {
+   // 	p->imprimeDados();
+   // }
 
    /*
       // Exemplo de Instanciação de Objetos (Estáticos e Dinâmicos)
