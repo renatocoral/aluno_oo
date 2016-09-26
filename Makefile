@@ -21,3 +21,5 @@ clean:
 
 run:
 		bin/main
+test:
+		bin/main teste
