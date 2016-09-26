@@ -7,12 +7,15 @@
 
 using namespace std;
 
-long int le_teclado_int() {
+long int le_teclado_int(int aceita_zero) {
    
    string input = "";
    long int valor;
    while (true) {   
-      getline(cin, input);   
+      getline(cin, input);  
+      //if(input == "") 
+      if((aceita_zero != 0) && (input == ""))
+         throw(1); 
       stringstream myStream(input);
       if (myStream >> valor)
         break;
@@ -57,7 +60,7 @@ int main(int argc, char ** argv) {
 list<Pessoa*> cadastro_de_pessoas;
 
 string entrada = "";
-int opcao = 1;
+int opcao = 10;
 while(opcao) {
    cout << "Escolha uma opção:" << endl;
    cout << "-----------------------" << endl;
@@ -65,7 +68,8 @@ while(opcao) {
    cout << "2 - Cadastrar Professor:" << endl;
    cout << "3 - Cadastrar Servidor:" << endl;
    cout << "0 - Sair" << endl;
-   opcao = (int) le_teclado_int();
+   try { opcao = (int) le_teclado_int(0); }
+   catch(int v){ cout << "Opção inválida." << endl;  }
 
    string nome = "";
    int matricula;
@@ -74,9 +78,9 @@ while(opcao) {
          cout << "Nome: ";
          getline (cin,nome);
          cout << "Matricula: ";
-         matricula = (int) le_teclado_int();
+         matricula = (int) le_teclado_int(0);
          cout << "CPF: ";
-         cpf = le_teclado_int();
+         cpf = le_teclado_int(0);
    }
    if(opcao == 1) {
          Aluno *aluno = new Aluno(nome, matricula, cpf);
@@ -104,7 +108,7 @@ while(opcao) {
       cout << "Departamento: ";
       getline (cin,departamento);
       cout << "Carga Horária: ";
-      carga_horaria = (int) le_teclado_int();
+      carga_horaria = (int) le_teclado_int(0);
       Servidor *servidor = new Servidor(nome, matricula, cpf, cargo, departamento, carga_horaria);
       cadastro_de_pessoas.push_back(servidor);      
    }
