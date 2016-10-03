@@ -1,0 +1,4 @@
+aluno_oo:
+  script:
+    - make
+    - make test
