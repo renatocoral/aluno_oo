@@ -39,7 +39,7 @@ float le_teclado_float() {
 
 int main(int argc, char ** argv) {
 
-cout << "Inicio do programa" << endl;
+cout << "Inicio do programa!!" << endl;
 
 if(argc > 1) {
    // Polimosrfismo - Exemplo de Uso de Sobrecarga no Contrutor
